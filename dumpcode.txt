@@ -1,0 +1,12 @@
+def check(s, a, b, c):
+    """Performs a check on input data"""
+    if a < 0 or a > 31:
+        print("Error in {} Date Input".format(s))
+        input_date()
+    if b < 0 or b > 12:
+        print("Error in {} Month Input".format(s))
+        input_date()
+    if c < 0:
+        print("Error in {} Year Input".format(s))
+        input_date()
+    return
