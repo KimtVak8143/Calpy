@@ -2,6 +2,8 @@ class Date:
     day = 0
     month = 0
     year = 0
+    #month_list = {1: "January", 2: "February", 3: "March", 4: "April", 5: "May", 6: "June", 7: "July", 8: "August",
+     #             9: "September", 10: "October", 11: "November", 12: "December"}
 
     def __int__(self, day, month, year):
         self.day = day
@@ -10,6 +12,10 @@ class Date:
 
     def __str__(self):
         return "Input is \n\tDate :{}\n\tMonth :{}\n\tYear :{}".format(self.day, self.month, self.year)
+
+
+# month_list = {1: "January", 2: "February", 3: "March", 4: "April", 5: "May", 6: "June", 7: "July", 8: "August",
+  #             9: "September", 10: "October", 11: "November", 12: "December"}
 
 
 def check():
