@@ -17,12 +17,7 @@ class Date:
     def __str__(self):  # printing the string
         # print("\nDate is {} {} {}".format(self.day, month_list[self.month], self.year))
         # return "Input is \n\tDate :{}\n\tMonth :{}\n\tYear :{}".format(self.day, month_list[self.month], self.year)
-        return "\nDate is {} {} {}".format(self.day, month_list[self.month], self.year)
-
-
-def check():
-    """Performs a check on input data"""
-    return
+        return "Date is {} {} {}".format(self.day, month_list[self.month], self.year)
 
 
 def show():
@@ -32,24 +27,67 @@ def show():
 
 def input_date():
     """Takes the input from user"""
-    print("\nInput for First date")
-    d1 = int(input("Enter the date :"))
-    m1 = int(input("Enter the month :"))
-    y1 = int(input("Enter the year :"))
+    # print("\nInput for First date")
+    flag = 0
+    post = 0
+    d1 = 0
+    d2 = 0
+    m1 = 0
+    m2 = 0
+    y1 = 0
+    y2 = 0
+    while flag == 0:
+        print("\nInput for First date")
+        d1 = int(input("Enter the date :"))
+        if 0 < d1 < 32:
+            flag += 1
+
+        m1 = int(input("Enter the month :"))
+        if 0 < m1 < 13:
+            flag += 1
+
+        y1 = int(input("Enter the year :"))
+        if y1 > 0:
+            flag += 1
+
+        if flag != 3:
+            print("Try Again")
+            flag = 0
+        else:
+            break
+
+    # check("first", d1, m1, y1)
     date1 = Date()
     date1.day = d1
     date1.month = m1
     date1.year = y1
-    print("\nInput for second date")
-    d2 = int(input("Enter the date :"))
-    m2 = int(input("Enter the month :"))
-    y2 = int(input("Enter the year :"))
+
+    while post == 0:
+        print("\nInput for Second date")
+        d2 = int(input("Enter the date:"))
+        if 0 < d2 < 32:
+            post += 1
+
+        m2 = int(input("Enter the month :"))
+        if 0 < m2 < 13:
+            post += 1
+
+        y2 = int(input("Enter the year :"))
+        if y2 > 0:
+            post += 1
+
+        if post != 3:
+            print("Try Again")
+            post = 0
+        else:
+            break
+
     date2 = Date()
     date2.day = d2
     date2.month = m2
     date2.year = y2
-    print("First", date1)
-    print("Second", date2)
+    print("\nFirst", date1)
+    print("\nSecond", date2)
     return
 
 
