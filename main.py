@@ -1,9 +1,11 @@
+month_list = {1: "January", 2: "February", 3: "March", 4: "April", 5: "May", 6: "June", 7: "July", 8: "August",
+              9: "September", 10: "October", 11: "November", 12: "December"}
+
+
 class Date:
     day = 0
     month = 0
     year = 0
-    #month_list = {1: "January", 2: "February", 3: "March", 4: "April", 5: "May", 6: "June", 7: "July", 8: "August",
-     #             9: "September", 10: "October", 11: "November", 12: "December"}
 
     def __int__(self, day, month, year):
         self.day = day
@@ -11,11 +13,9 @@ class Date:
         self.year = year
 
     def __str__(self):
-        return "Input is \n\tDate :{}\n\tMonth :{}\n\tYear :{}".format(self.day, self.month, self.year)
-
-
-# month_list = {1: "January", 2: "February", 3: "March", 4: "April", 5: "May", 6: "June", 7: "July", 8: "August",
-  #             9: "September", 10: "October", 11: "November", 12: "December"}
+        # print("\nDate is {} {} {}".format(self.day, month_list[self.month], self.year))
+        # return "Input is \n\tDate :{}\n\tMonth :{}\n\tYear :{}".format(self.day, month_list[self.month], self.year)
+        return "\nDate is {} {} {}".format(self.day, month_list[self.month], self.year)
 
 
 def check():
@@ -23,9 +23,6 @@ def check():
     return
 
 
-# self.day = input("Enter the date :")
-# self.month = input("Enter the month :")
-# self.year = input("Enter the year :")
 def show():
     """Prints the calendar"""
     return
@@ -33,17 +30,17 @@ def show():
 
 def input_date():
     """Takes the input from user"""
-    print("Input for First date :\n")
+    print("\nInput for First date")
     d1 = int(input("Enter the date :"))
-    m1 = input("Enter the month :")
+    m1 = int(input("Enter the month :"))
     y1 = int(input("Enter the year :"))
     date1 = Date()
     date1.day = d1
     date1.month = m1
     date1.year = y1
-    print("Input for second date :\n")
+    print("\nInput for second date")
     d2 = int(input("Enter the date :"))
-    m2 = input("Enter the month :")
+    m2 = int(input("Enter the month :"))
     y2 = int(input("Enter the year :"))
     date2 = Date()
     date2.day = d2
@@ -68,7 +65,7 @@ def welcome():
     """Welcome message for user"""
     # print("Enter your name")
     fn = input("Enter your name :")
-    print("Welcome {}".format(fn))
+    print("\nWelcome {}".format(fn))
 
 
 def main():
