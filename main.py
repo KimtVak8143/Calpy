@@ -1,18 +1,20 @@
+# The month_list dictionary for month conversion
 month_list = {1: "January", 2: "February", 3: "March", 4: "April", 5: "May", 6: "June", 7: "July", 8: "August",
               9: "September", 10: "October", 11: "November", 12: "December"}
 
 
+# Class Date for storing date and printing
 class Date:
     day = 0
     month = 0
     year = 0
 
-    def __int__(self, day, month, year):
+    def __int__(self, day, month, year):  # initialising values
         self.day = day
         self.month = month
         self.year = year
 
-    def __str__(self):
+    def __str__(self):  # printing the string
         # print("\nDate is {} {} {}".format(self.day, month_list[self.month], self.year))
         # return "Input is \n\tDate :{}\n\tMonth :{}\n\tYear :{}".format(self.day, month_list[self.month], self.year)
         return "\nDate is {} {} {}".format(self.day, month_list[self.month], self.year)
