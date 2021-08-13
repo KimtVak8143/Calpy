@@ -1,6 +1,13 @@
+# Imports and Other Declarations
+# import Calendar
+
+
 # The month_list dictionary for month conversion
 month_list = {1: "January", 2: "February", 3: "March", 4: "April", 5: "May", 6: "June", 7: "July", 8: "August",
               9: "September", 10: "October", 11: "November", 12: "December"}
+
+mon_days = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+mon_leap = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 
 
 # Class Date for storing date and printing
@@ -22,32 +29,46 @@ class Date:
 
 def show():
     """Prints the calendar"""
+
     return
+
+
+def leap_check(x, y):
+    """Checks if the year is leap or not for february month"""
+    # m = 0
+    if x % 4 == 0:
+        if x % 100 == 0:
+            if x % 400 == 0:
+                m = mon_leap[y-1]   # leap = 1  # Year is leap, follow mon_leap
+            else:
+                m = mon_days[y-1]  # leap = 0  # leap is false, follow mon_days
+        else:
+            m = mon_leap[y-1]   # leap = 1  # Year is leap, follow mon_leap
+    else:
+        m = mon_days[y-1]  # leap = 0  # leap is false, follow mon_days
+
+    return m
 
 
 def input_date():
     """Takes the input from user"""
     # print("\nInput for First date")
-    flag = 0
-    post = 0
-    d1 = 0
-    d2 = 0
-    m1 = 0
-    m2 = 0
-    y1 = 0
-    y2 = 0
+    flag, post = 0, 0
+    d1, m1, y1 = 0, 0, 0
+    d2, m2, y2 = 0, 0, 0
+
     while flag == 0:
         print("\nInput for First date")
-        d1 = int(input("Enter the date :"))
-        if 0 < d1 < 32:
+        y1 = int(input("Enter the year :"))
+        if y1 > 0:
             flag += 1
 
         m1 = int(input("Enter the month :"))
         if 0 < m1 < 13:
             flag += 1
 
-        y1 = int(input("Enter the year :"))
-        if y1 > 0:
+        d1 = int(input("Enter the date :"))
+        if 0 < d1 < leap_check(y1, m1)+1:
             flag += 1
 
         if flag != 3:
@@ -64,16 +85,16 @@ def input_date():
 
     while post == 0:
         print("\nInput for Second date")
-        d2 = int(input("Enter the date:"))
-        if 0 < d2 < 32:
+        y2 = int(input("Enter the year :"))
+        if y2 > 0:
             post += 1
 
         m2 = int(input("Enter the month :"))
         if 0 < m2 < 13:
             post += 1
 
-        y2 = int(input("Enter the year :"))
-        if y2 > 0:
+        d2 = int(input("Enter the date:"))
+        if 0 < d2 < leap_check(y2, m2)+1:
             post += 1
 
         if post != 3:
