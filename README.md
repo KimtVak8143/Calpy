@@ -15,6 +15,7 @@ Calpy is a Basic Python Program.
 - Lists
 - Dictionaries
 - Strings
+- conditional statements
 - basic i/o
 - loops
 - functions
@@ -23,4 +24,4 @@ Calpy is a Basic Python Program.
 #### Pull requests are welcome. 
 #### Please open an issue first to discuss what you would like to change.
 
-#### Please make sure to update tests as appropriate.
+#### Please make sure to update test cases as appropriate.
