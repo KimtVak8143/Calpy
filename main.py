@@ -1,13 +1,16 @@
 # Imports and Other Declarations
-# import Calendar
 
 
 # The month_list dictionary for month conversion
 month_list = {1: "January", 2: "February", 3: "March", 4: "April", 5: "May", 6: "June", 7: "July", 8: "August",
               9: "September", 10: "October", 11: "November", 12: "December"}
 
-mon_days = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+# Names of Days in a Week
+days_list = ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"]
+
+# List of Days in a month for a leap and non-leap year Respectively
 mon_leap = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+mon_days = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 
 
 # Class Date for storing date and printing
@@ -27,9 +30,18 @@ class Date:
         return "Date is {} {} {}".format(self.day, month_list[self.month], self.year)
 
 
-def show():
+def show(day, month, year):
     """Prints the calendar"""
-
+    print("\nYear : {} \tMonth : {}".format(year, month_list[month]))
+    for i in days_list:
+        print(i, end=" ")
+    for i in range(1, leap_check(year, month)+1):
+        if i % 7 == 1:
+            print("")
+        if i == day:
+            print('\u0332', end='{}*\t'.format(i))
+        else:
+            print(i, end='\t')
     return
 
 
@@ -107,18 +119,15 @@ def input_date():
     date2.day = d2
     date2.month = m2
     date2.year = y2
-    print("\nFirst", date1)
+    print("\n\nFirst", date1)
+    show(d1, m1, y1)
     print("\nSecond", date2)
+    show(d2, m2, y2)
     return
 
 
 def diff():
     """shows the difference between 2 dates"""
-    return
-
-
-def modify():
-    """marks an asterisk on important days"""
     return
 
 
@@ -132,6 +141,7 @@ def welcome():
 def main():
     print("Hello, to this program")
     welcome()
+    # show(31, 4, 2020)
     input_date()
 
 
