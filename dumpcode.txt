@@ -10,3 +10,8 @@ def check(s, a, b, c):
         print("Error in {} Year Input".format(s))
         input_date()
     return
+
+
+def modify():
+    """marks an asterisk on important days"""
+    return
