@@ -1,6 +1,3 @@
-# Imports and Other Declarations
-
-
 # The month_list dictionary for month conversion
 month_list = {1: "January", 2: "February", 3: "March", 4: "April", 5: "May", 6: "June", 7: "July", 8: "August",
               9: "September", 10: "October", 11: "November", 12: "December"}
@@ -135,14 +132,22 @@ def welcome():
     """Welcome message for user"""
     # print("Enter your name")
     fn = input("Enter your name :")
-    print("\nWelcome {}".format(fn))
+    # print("\nWelcome {}".format(fn))
+    return fn
+
+
+def goodbye(par):
+    """Shows Exit Message on Completion of Program"""
+    return "\n\nThank you {}, for visiting :".format(par)
 
 
 def main():
     print("Hello, to this program")
-    welcome()
+    named = welcome()
+    print("\nWelcome {}".format(named))
     # show(31, 4, 2020)
     input_date()
+    print(goodbye(named))
 
 
 # to execute main function
