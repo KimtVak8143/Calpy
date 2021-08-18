@@ -29,14 +29,14 @@ class Date:
 
 def show(day, month, year):
     """Prints the calendar"""
-    print("\nYear : {} \tMonth : {}".format(year, month_list[month]))
+    print("\nYear : {} \tMonth : {}\n".format(year, month_list[month]))
     for i in days_list:
         print(i, end=" ")
     for i in range(1, leap_check(year, month)+1):
         if i % 7 == 1:
             print("")
         if i == day:
-            print('\u0332', end='{:02d}*\t'.format(i))
+            print('\u0332', end='{:02d}^\t'.format(i))
         else:
             print("{:02d}".format(i), end='\t')
     return
@@ -138,7 +138,7 @@ def welcome():
 
 def goodbye(par):
     """Shows Exit Message on Completion of Program"""
-    return "\n\nThank you {}, for visiting !!".format(par)
+    return "\n\nThank you {}, for visiting our Calendar !!".format(par)
 
 
 def main():
