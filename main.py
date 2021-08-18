@@ -24,7 +24,7 @@ class Date:
     def __str__(self):  # printing the string
         # print("\nDate is {} {} {}".format(self.day, month_list[self.month], self.year))
         # return "Input is \n\tDate :{}\n\tMonth :{}\n\tYear :{}".format(self.day, month_list[self.month], self.year)
-        return "Date is {} {} {}".format(self.day, month_list[self.month], self.year)
+        return "Date is {:02d} {} {}".format(self.day, month_list[self.month], self.year)
 
 
 def show(day, month, year):
@@ -36,9 +36,9 @@ def show(day, month, year):
         if i % 7 == 1:
             print("")
         if i == day:
-            print('\u0332', end='{}*\t'.format(i))
+            print('\u0332', end='{:02d}*\t'.format(i))
         else:
-            print(i, end='\t')
+            print("{:02d}".format(i), end='\t')
     return
 
 
@@ -138,7 +138,7 @@ def welcome():
 
 def goodbye(par):
     """Shows Exit Message on Completion of Program"""
-    return "\n\nThank you {}, for visiting :".format(par)
+    return "\n\nThank you {}, for visiting !!".format(par)
 
 
 def main():
